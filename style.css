@@ -1,8 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap');
 
 :root {
-    --text-color: #415f58;
-    --name-color: #6fa094;
+    --bg-image: url("assets/images/bg.png");
+    --text-color: #3f5f58;
+    --name-color: #72a99b;
 }
 
 html,
@@ -15,37 +16,39 @@ body {
 
 body {
     direction: rtl;
-    font-family: "IBM Plex Sans Arabic", "Tajawal", Arial, sans-serif;
+    font-family: "Tajawal", Arial, sans-serif;
     background: #f7f8f5;
+    display: grid;
+    place-items: center;
     -webkit-font-smoothing: antialiased;
     text-rendering: geometricPrecision;
 }
 
 .graduation-story {
     position: relative;
-    width: 100vw;
-    height: 100dvh;
-    min-height: 100dvh;
-    overflow: hidden;
 
-    background-image: url("assets/images/bg.png");
-    background-size: cover;
-    background-position: center center;
+    width: min(100vw, calc(100dvh * 9 / 16));
+    height: min(100dvh, calc(100vw * 16 / 9));
+
+    overflow: hidden;
+    container-type: size;
+
+    background-image: var(--bg-image);
+    background-size: 100% 100%;
+    background-position: center;
     background-repeat: no-repeat;
 
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    box-sizing: border-box;
+    color: var(--text-color);
 }
 
-/* منطقة النص */
+/* مكان النص مضبوط بناء على أبعاد 1080x1920 */
 .text-area {
-    position: relative;
-    z-index: 2;
+    position: absolute;
+    top: 22.5cqh;
+    left: 50%;
+    transform: translateX(-50%);
 
-    width: min(78vw, 760px);
-    margin-top: clamp(170px, 19vh, 360px);
+    width: 74cqw;
 
     display: flex;
     flex-direction: column;
@@ -55,97 +58,63 @@ body {
     color: var(--text-color);
 }
 
-/* النص العلوي */
 .top-text,
 .middle-text,
 .bottom-text {
     margin: 0;
-    white-space: pre-line;
+
     color: var(--text-color);
+    font-family: "Tajawal", Arial, sans-serif;
+    font-size: 3.35cqw;
+    font-weight: 700;
+    line-height: 1.75;
+    letter-spacing: 0.02em;
 
-    font-family: "IBM Plex Sans Arabic", "Tajawal", Arial, sans-serif;
-    font-size: clamp(23px, 3.2vw, 46px);
-    font-weight: 300;
-    line-height: 1.9;
-    letter-spacing: 0.4px;
-
+    white-space: pre-line;
     text-wrap: balance;
     overflow-wrap: anywhere;
 }
 
 .middle-text {
-    margin-top: clamp(32px, 4.2vh, 72px);
+    margin-top: 8.2cqh;
 }
 
 .graduate-name {
-    margin: clamp(22px, 3vh, 52px) 0 clamp(26px, 3.4vh, 58px);
+    margin: 2.5cqh 0 5.3cqh;
 
     color: var(--name-color);
-
-    font-family: "Tajawal", "IBM Plex Sans Arabic", Arial, sans-serif;
-    font-size: clamp(64px, 9vw, 126px);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -1px;
+    font-family: "Tajawal", Arial, sans-serif;
+    font-size: 8.6cqw;
+    font-weight: 900;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
 
     text-wrap: balance;
     overflow-wrap: anywhere;
 }
 
 .bottom-text {
-    max-width: 640px;
+    max-width: 66cqw;
 }
 
-/* مناسب أكثر لأبعاد 1080x1920 */
-@media (min-aspect-ratio: 9 / 16) {
-    .graduation-story {
-        background-size: contain;
-        background-color: #f7f8f5;
-    }
-}
-
-/* للجوال */
-@media (max-width: 640px) {
-    .text-area {
-        width: 78vw;
-        margin-top: 8vh;
-    }
-
-    .top-text,
-    .middle-text,
-    .bottom-text {
-        font-size: clamp(21px, 5.2vw, 34px);
-        line-height: 1.85;
-    }
-
-    .middle-text {
-        margin-top: 34px;
-    }
-
-    .graduate-name {
-        font-size: clamp(58px, 14vw, 88px);
-        margin: 50px 0 0px;
-    }
-}
-
+/* تصدير وطباعة */
 @media print {
     @page {
         margin: 0;
+        size: 1080px 1920px;
     }
 
     html,
     body {
-        width: 100%;
-        height: 100%;
+        width: 1080px;
+        height: 1920px;
         overflow: hidden;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
     }
 
     .graduation-story {
-        width: 100vw;
-        height: 100vh;
-        min-height: 100vh;
-        background-size: cover;
+        width: 1080px;
+        height: 1920px;
     }
 }
