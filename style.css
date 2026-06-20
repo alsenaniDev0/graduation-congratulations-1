@@ -81,14 +81,12 @@ body {
 
 .graduate-name {
     margin: 2.5cqh 0 5.3cqh;
-
     color: var(--name-color);
     font-family: "Tajawal", Arial, sans-serif;
     font-size: 8.6cqw;
     font-weight: 900;
     line-height: 1.05;
     letter-spacing: -0.03em;
-
     text-wrap: balance;
     overflow-wrap: anywhere;
 }
