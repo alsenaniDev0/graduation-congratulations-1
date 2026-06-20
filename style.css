@@ -1,63 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800;900&family=Tajawal:wght@500;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&display=swap');
 
 :root {
-    --primary: #101d33;
-    --primary-2: #284f78;
-    --primary-3: #315f90;
-
-    --accent: #d9aa4f;
-    --accent-2: #f4d58a;
-
-    --page-bg-1: #f9fbff;
-    --page-bg-2: #edf3fa;
-    --page-bg-3: #dce7f4;
-
-    --card-bg-1: rgba(255, 255, 255, 0.96);
-    --card-bg-2: rgba(247, 250, 255, 0.96);
-
-    --text: #122033;
-    --muted: #5a6b82;
-    --soft: #f4f7fb;
-}
-
-/* خريج */
-.gender-boy {
-    --primary: #101d33;
-    --primary-2: #284f78;
-    --primary-3: #315f90;
-
-    --accent: #d9aa4f;
-    --accent-2: #f4d58a;
-
-    --page-bg-1: #f9fbff;
-    --page-bg-2: #edf3fa;
-    --page-bg-3: #dce7f4;
-
-    --card-bg-1: rgba(255, 255, 255, 0.96);
-    --card-bg-2: rgba(247, 250, 255, 0.96);
-
-    --text: #122033;
-    --muted: #5a6b82;
-}
-
-/* خريجة */
-.gender-girl {
-    --primary: #341527;
-    --primary-2: #8d4a73;
-    --primary-3: #b96b95;
-
-    --accent: #d9a85c;
-    --accent-2: #ffe0a6;
-
-    --page-bg-1: #fffafd;
-    --page-bg-2: #faedf5;
-    --page-bg-3: #f3dce9;
-
-    --card-bg-1: rgba(255, 255, 255, 0.97);
-    --card-bg-2: rgba(255, 247, 252, 0.96);
-
-    --text: #321827;
-    --muted: #7a5269;
+    --text-color: #415f58;
+    --name-color: #6fa094;
 }
 
 html,
@@ -70,610 +15,116 @@ body {
 
 body {
     direction: rtl;
-    font-family: Tajawal, Cairo, Arial, sans-serif;
-    background: var(--page-bg-2);
+    font-family: "IBM Plex Sans Arabic", "Tajawal", Arial, sans-serif;
+    background: #f7f8f5;
     -webkit-font-smoothing: antialiased;
     text-rendering: geometricPrecision;
 }
 
-.graduation-site {
+.graduation-story {
+    position: relative;
     width: 100vw;
     height: 100dvh;
     min-height: 100dvh;
-    padding: clamp(18px, 4vw, 44px);
+    overflow: hidden;
+
+    background-image: url("assets/images/bg.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     box-sizing: border-box;
-
-    display: grid;
-    place-items: center;
-
-    background:
-        radial-gradient(circle at 88% 12%, color-mix(in srgb, var(--accent) 34%, transparent), transparent 30%),
-        radial-gradient(circle at 10% 90%, color-mix(in srgb, var(--primary-3) 24%, transparent), transparent 34%),
-        linear-gradient(135deg, var(--page-bg-1) 0%, var(--page-bg-2) 46%, var(--page-bg-3) 100%);
 }
 
-.graduation-card {
+/* منطقة النص */
+.text-area {
     position: relative;
-    width: 100%;
-    height: 100%;
-    padding: clamp(34px, 6vw, 76px) clamp(24px, 5vw, 64px);
-    box-sizing: border-box;
-    overflow: hidden;
-    isolation: isolate;
+    z-index: 2;
+
+    width: min(78vw, 760px);
+    margin-top: clamp(170px, 19vh, 360px);
 
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    gap: clamp(18px, 3.5vw, 42px);
+    align-items: center;
 
     text-align: center;
-    color: var(--text);
-
-    border-radius: clamp(34px, 5vw, 58px);
-    border: 3px solid transparent;
-
-    background:
-        linear-gradient(180deg, var(--card-bg-1), var(--card-bg-2)) padding-box,
-        linear-gradient(135deg,
-            var(--primary) 0%,
-            var(--primary-3) 18%,
-            var(--accent) 38%,
-            var(--accent-2) 50%,
-            var(--accent) 62%,
-            var(--primary-3) 82%,
-            var(--primary) 100%) border-box;
-
-    box-shadow:
-        0 42px 110px color-mix(in srgb, var(--primary) 22%, transparent),
-        0 18px 42px color-mix(in srgb, var(--primary) 14%, transparent),
-        inset 0 0 0 1px rgba(255, 255, 255, 0.82),
-        inset 0 0 0 12px color-mix(in srgb, var(--accent) 8%, transparent);
+    color: var(--text-color);
 }
 
-.luxury-bg {
-    position: absolute;
-    inset: 0;
-    z-index: -5;
-    pointer-events: none;
-
-    background:
-        radial-gradient(circle at 50% 8%, color-mix(in srgb, var(--accent-2) 38%, transparent), transparent 28%),
-        radial-gradient(circle at 50% 92%, color-mix(in srgb, var(--primary-3) 16%, transparent), transparent 34%),
-        linear-gradient(135deg, rgba(255, 255, 255, 0.92), var(--card-bg-2));
-}
-
-.luxury-bg::before {
-    content: "";
-    position: absolute;
-    width: 760px;
-    height: 760px;
-    top: -420px;
-    right: -280px;
-    border-radius: 50%;
-    background: radial-gradient(circle, color-mix(in srgb, var(--accent) 24%, transparent), transparent 64%);
-}
-
-.luxury-bg::after {
-    content: "";
-    position: absolute;
-    width: 720px;
-    height: 720px;
-    bottom: -420px;
-    left: -300px;
-    border-radius: 50%;
-    background: radial-gradient(circle, color-mix(in srgb, var(--primary-3) 18%, transparent), transparent 64%);
-}
-
-.grid-pattern {
-    position: absolute;
-    inset: 24px;
-    z-index: -4;
-    pointer-events: none;
-    border-radius: clamp(26px, 4vw, 48px);
-    opacity: 0.46;
-
-    background-image:
-        linear-gradient(90deg, color-mix(in srgb, var(--primary) 5%, transparent) 1px, transparent 1px),
-        linear-gradient(180deg, color-mix(in srgb, var(--primary) 5%, transparent) 1px, transparent 1px),
-        radial-gradient(circle, color-mix(in srgb, var(--accent) 11%, transparent) 1.2px, transparent 1.2px);
-
-    background-size: 38px 38px, 38px 38px, 30px 30px;
-    mask-image: radial-gradient(circle at center, black 44%, transparent 88%);
-}
-
-.main-glow {
-    position: absolute;
-    left: 50%;
-    width: min(720px, 88vw);
-    height: 180px;
-    transform: translateX(-50%);
-    z-index: -3;
-    pointer-events: none;
-    filter: blur(4px);
-    opacity: 0.88;
-}
-
-.glow-top {
-    top: -80px;
-    background: radial-gradient(ellipse, color-mix(in srgb, var(--accent-2) 46%, transparent), transparent 68%);
-}
-
-.glow-bottom {
-    bottom: -92px;
-    background: radial-gradient(ellipse, color-mix(in srgb, var(--primary-3) 22%, transparent), transparent 68%);
-}
-
-.top-ribbon {
-    position: absolute;
-    top: clamp(22px, 3vw, 34px);
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 5;
-
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 12px 34px;
-    border-radius: 999px;
-
-    background:
-        linear-gradient(135deg, var(--primary), var(--primary-2) 54%, var(--primary));
-    color: #fff;
-
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    box-shadow:
-        0 16px 34px color-mix(in srgb, var(--primary) 18%, transparent),
-        inset 0 1px 0 rgba(255, 255, 255, 0.18);
-}
-
-.top-ribbon::before,
-.top-ribbon::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: 26px;
-    height: 2px;
-    background: linear-gradient(90deg, transparent, var(--accent-2), transparent);
-}
-
-.top-ribbon::before {
-    right: -34px;
-}
-
-.top-ribbon::after {
-    left: -34px;
-}
-
-.top-ribbon span {
-    font-size: clamp(14px, 2vw, 24px);
-    font-weight: 900;
-    letter-spacing: 0.3px;
-    white-space: nowrap;
-}
-
-.corner {
-    position: absolute;
-    width: clamp(160px, 24vw, 250px);
-    height: clamp(160px, 24vw, 250px);
-    pointer-events: none;
-    opacity: 0.88;
-}
-
-.corner::before,
-.corner::after {
-    content: "";
-    position: absolute;
-    border-style: solid;
-    border-color: color-mix(in srgb, var(--accent) 48%, transparent);
-}
-
-.corner::before {
-    inset: 0;
-    border-width: 2px;
-}
-
-.corner::after {
-    inset: 16px;
-    border-width: 1px;
-    opacity: 0.78;
-}
-
-.corner-top-right {
-    top: 28px;
-    right: 28px;
-}
-
-.corner-top-right::before,
-.corner-top-right::after {
-    border-left: 0;
-    border-bottom: 0;
-    border-radius: 0 38px 0 0;
-}
-
-.corner-bottom-left {
-    bottom: 28px;
-    left: 28px;
-}
-
-.corner-bottom-left::before,
-.corner-bottom-left::after {
-    border-right: 0;
-    border-top: 0;
-    border-radius: 0 0 0 38px;
-}
-
-.star {
-    position: absolute;
-    z-index: -1;
-    pointer-events: none;
-    color: color-mix(in srgb, var(--accent) 72%, transparent);
-    line-height: 1;
-    text-shadow: 0 10px 24px color-mix(in srgb, var(--primary) 10%, transparent);
-}
-
-.star-1 {
-    top: 14%;
-    right: 13%;
-    font-size: clamp(22px, 3vw, 42px);
-}
-
-.star-2 {
-    top: 22%;
-    left: 14%;
-    font-size: clamp(18px, 2.6vw, 34px);
-}
-
-.star-3 {
-    bottom: 18%;
-    right: 12%;
-    font-size: clamp(18px, 2.8vw, 36px);
-    color: color-mix(in srgb, var(--primary-3) 36%, transparent);
-}
-
-.star-4 {
-    bottom: 14%;
-    left: 16%;
-    font-size: clamp(22px, 3vw, 42px);
-}
-
-.star-5 {
-    top: 50%;
-    left: 7%;
-    font-size: clamp(18px, 2.4vw, 32px);
-    opacity: 0.52;
-}
-
-.card-header {
-    display: grid;
-    justify-items: center;
-    gap: clamp(12px, 2vw, 20px);
-    padding-top: clamp(36px, 6vw, 74px);
-}
-
-.batch-pill {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    padding: 10px 26px;
-    border-radius: 999px;
-
-    background:
-        linear-gradient(180deg, #ffffff, color-mix(in srgb, var(--primary-3) 9%, #ffffff));
-    color: var(--primary-2);
-
-    border: 1px solid color-mix(in srgb, var(--primary-3) 16%, transparent);
-    box-shadow:
-        0 12px 28px color-mix(in srgb, var(--primary) 8%, transparent),
-        inset 0 1px 0 rgba(255, 255, 255, 0.9);
-
-    font-size: clamp(15px, 2vw, 25px);
-    font-weight: 900;
-}
-
-.icon-medal {
-    position: relative;
-    width: clamp(118px, 16vw, 178px);
-    height: clamp(118px, 16vw, 178px);
-
-    display: grid;
-    place-items: center;
-    border-radius: 50%;
-
-    background:
-        linear-gradient(135deg, #fff8df, var(--accent) 48%, var(--accent-2) 100%);
-
-    box-shadow:
-        0 24px 48px color-mix(in srgb, var(--primary) 16%, transparent),
-        0 0 0 10px color-mix(in srgb, var(--accent) 13%, transparent),
-        0 0 0 18px color-mix(in srgb, var(--primary-3) 7%, transparent),
-        inset 0 2px 0 rgba(255, 255, 255, 0.72),
-        inset 0 -14px 26px rgba(85, 61, 21, 0.12);
-}
-
-.icon-medal::before {
-    content: "";
-    position: absolute;
-    inset: 13px;
-    border-radius: 50%;
-    border: 1px dashed color-mix(in srgb, var(--primary) 24%, transparent);
-}
-
-.icon-medal::after {
-    content: "";
-    position: absolute;
-    bottom: -26px;
-    width: 84px;
-    height: 52px;
-    z-index: -1;
-
-    background:
-        linear-gradient(135deg, var(--primary-2), var(--primary));
-    clip-path: polygon(0 0, 100% 0, 78% 100%, 50% 66%, 22% 100%);
-    opacity: 0.95;
-}
-
-.icon-shine {
-    position: absolute;
-    inset: 0;
-    border-radius: 50%;
-    overflow: hidden;
-}
-
-.icon-shine::before {
-    content: "";
-    position: absolute;
-    top: -34%;
-    right: -70%;
-    width: 80%;
-    height: 160%;
-    transform: rotate(26deg);
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.42), transparent);
-}
-
-.icon {
-    position: relative;
-    z-index: 2;
-    font-size: clamp(58px, 8.8vw, 94px);
-    line-height: 1;
-    filter: drop-shadow(0 8px 12px color-mix(in srgb, var(--primary) 12%, transparent));
-}
-
-.pre-title {
-    margin: clamp(20px, 3vw, 30px) 0 0;
-    color: var(--muted);
-    font-size: clamp(17px, 2.4vw, 30px);
-    font-weight: 800;
-    letter-spacing: 0.2px;
-}
-
-.main-title {
-    position: relative;
+/* النص العلوي */
+.top-text,
+.middle-text,
+.bottom-text {
     margin: 0;
-    color: var(--primary);
+    white-space: pre-line;
+    color: var(--text-color);
 
-    font-size: clamp(40px, 7.4vw, 86px);
-    font-weight: 900;
+    font-family: "IBM Plex Sans Arabic", "Tajawal", Arial, sans-serif;
+    font-size: clamp(23px, 3.2vw, 46px);
+    font-weight: 300;
+    line-height: 1.9;
+    letter-spacing: 0.4px;
+
+    text-wrap: balance;
+    overflow-wrap: anywhere;
+}
+
+.middle-text {
+    margin-top: clamp(32px, 4.2vh, 72px);
+}
+
+.graduate-name {
+    margin: clamp(22px, 3vh, 52px) 0 clamp(26px, 3.4vh, 58px);
+
+    color: var(--name-color);
+
+    font-family: "Tajawal", "IBM Plex Sans Arabic", Arial, sans-serif;
+    font-size: clamp(64px, 9vw, 126px);
+    font-weight: 800;
     line-height: 1.1;
-    letter-spacing: -0.8px;
-
-    text-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.9),
-        0 14px 28px color-mix(in srgb, var(--primary) 10%, transparent);
-}
-
-.main-title::after {
-    content: "";
-    display: block;
-    width: clamp(120px, 20vw, 220px);
-    height: 5px;
-    margin: clamp(16px, 2vw, 24px) auto 0;
-    border-radius: 999px;
-    background:
-        linear-gradient(90deg, transparent, var(--primary-3), var(--accent-2), var(--primary-3), transparent);
-    box-shadow: 0 8px 20px color-mix(in srgb, var(--accent) 22%, transparent);
-}
-
-.card-content {
-    display: grid;
-    justify-items: center;
-    gap: clamp(18px, 3vw, 32px);
-}
-
-.message {
-    max-width: 840px;
-    margin: 0 auto;
-
-    color: color-mix(in srgb, var(--primary) 76%, #ffffff);
-    font-size: clamp(21px, 3.6vw, 44px);
-    font-weight: 800;
-    line-height: 1.85;
+    letter-spacing: -1px;
 
     text-wrap: balance;
     overflow-wrap: anywhere;
-
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.78);
 }
 
-.name-box {
-    position: relative;
-    width: min(860px, 100%);
-    padding: clamp(22px, 4vw, 38px) clamp(20px, 4vw, 44px);
-    box-sizing: border-box;
-
-    border-radius: clamp(28px, 4vw, 42px);
-
-    background:
-        linear-gradient(180deg, rgba(255, 255, 255, 0.86), color-mix(in srgb, var(--page-bg-2) 70%, #ffffff)) padding-box,
-        linear-gradient(135deg,
-            color-mix(in srgb, var(--primary-3) 34%, transparent),
-            color-mix(in srgb, var(--accent) 52%, transparent),
-            color-mix(in srgb, var(--primary-3) 22%, transparent)) border-box;
-
-    border: 1.5px solid transparent;
-
-    box-shadow:
-        0 22px 46px color-mix(in srgb, var(--primary) 10%, transparent),
-        inset 0 1px 0 rgba(255, 255, 255, 0.86);
+.bottom-text {
+    max-width: 640px;
 }
 
-.name-box::before,
-.name-box::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    width: clamp(28px, 6vw, 64px);
-    height: 2px;
-    border-radius: 999px;
-    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+/* مناسب أكثر لأبعاد 1080x1920 */
+@media (min-aspect-ratio: 9 / 16) {
+    .graduation-story {
+        background-size: contain;
+        background-color: #f7f8f5;
+    }
 }
 
-.name-box::before {
-    right: clamp(14px, 2vw, 28px);
-}
-
-.name-box::after {
-    left: clamp(14px, 2vw, 28px);
-}
-
-.name-label {
-    display: inline-flex;
-    margin-bottom: clamp(10px, 1.8vw, 18px);
-
-    color: var(--primary-2);
-    font-size: clamp(14px, 2vw, 24px);
-    font-weight: 900;
-}
-
-.names {
-    margin: 0 auto;
-    max-width: 780px;
-
-    color: var(--primary);
-    font-size: clamp(44px, 8vw, 92px);
-    font-weight: 900;
-    line-height: 1.2;
-    letter-spacing: -0.8px;
-
-    text-wrap: balance;
-    overflow-wrap: anywhere;
-
-    text-shadow:
-        0 1px 0 rgba(255, 255, 255, 0.92),
-        0 14px 28px color-mix(in srgb, var(--primary) 12%, transparent);
-}
-
-.degree-box {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 14px;
-
-    max-width: 760px;
-    padding: 14px 30px;
-    border-radius: 999px;
-
-    background:
-        linear-gradient(135deg, var(--primary), var(--primary-3));
-    color: #ffffff;
-
-    border: 1px solid rgba(255, 255, 255, 0.22);
-    box-shadow:
-        0 18px 36px color-mix(in srgb, var(--primary) 16%, transparent),
-        inset 0 1px 0 rgba(255, 255, 255, 0.18);
-}
-
-.degree-box strong {
-    font-size: clamp(16px, 2.6vw, 30px);
-    font-weight: 900;
-    line-height: 1.5;
-}
-
-.degree-box span {
-    color: var(--accent-2);
-    font-size: clamp(14px, 2vw, 22px);
-}
-
-.card-footer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: clamp(12px, 2.2vw, 24px);
-    width: 100%;
-}
-
-.card-footer p {
-    margin: 0;
-
-    color: var(--primary);
-    font-size: clamp(19px, 3vw, 34px);
-    font-weight: 900;
-    white-space: nowrap;
-
-    padding: 12px 26px;
-    border-radius: 999px;
-
-    background: rgba(255, 255, 255, 0.62);
-    border: 1px solid color-mix(in srgb, var(--primary-3) 12%, transparent);
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, 0.86),
-        0 12px 26px color-mix(in srgb, var(--primary) 6%, transparent);
-}
-
-.footer-line {
-    flex: 1;
-    max-width: 180px;
-    height: 2px;
-    border-radius: 999px;
-    background:
-        linear-gradient(90deg, transparent, var(--accent), transparent);
-}
-
+/* للجوال */
 @media (max-width: 640px) {
-    .graduation-site {
-        padding: 18px;
+    .text-area {
+        width: 78vw;
+        margin-top: 8vh;
     }
 
-    .graduation-card {
-        min-height: 760px;
-        padding: 46px 24px;
-        border-radius: 36px;
+    .top-text,
+    .middle-text,
+    .bottom-text {
+        font-size: clamp(21px, 5.2vw, 34px);
+        line-height: 1.85;
     }
 
-    .top-ribbon {
-        padding: 10px 24px;
+    .middle-text {
+        margin-top: 34px;
     }
 
-    .card-header {
-        padding-top: 42px;
-    }
-
-    .message {
-        font-size: 23px;
-        line-height: 1.75;
-    }
-
-    .names {
-        font-size: 46px;
-    }
-
-    .degree-box {
-        border-radius: 28px;
-        padding: 13px 22px;
-    }
-
-    .card-footer {
-        gap: 10px;
-    }
-
-    .footer-line {
-        max-width: 72px;
-    }
-
-    .corner {
-        width: 168px;
-        height: 168px;
+    .graduate-name {
+        font-size: clamp(58px, 14vw, 88px);
+        margin: 50px 0 0px;
     }
 }
 
@@ -691,14 +142,10 @@ body {
         print-color-adjust: exact;
     }
 
-    .graduation-site {
-        padding: 0;
-    }
-
-    .graduation-card {
+    .graduation-story {
         width: 100vw;
         height: 100vh;
-        border-radius: 0;
-        box-shadow: none;
+        min-height: 100vh;
+        background-size: cover;
     }
 }

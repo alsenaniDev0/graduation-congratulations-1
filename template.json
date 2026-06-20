@@ -1,134 +1,52 @@
 {
-    "id": "premium-graduation-congratulations-gender",
-    "name": "تهنئة تخرج فاخرة",
+    "id": "soft-green-graduation-story",
+    "name": "تهنئة تخرج خضراء ناعمة",
     "version": "1.0.0",
     "html": "index.html",
     "css": "style.css",
+    "settings": {
+        "exportable": true,
+        "hasAnimation": false,
+        "width": 1080,
+        "height": 1920,
+        "durationSeconds": 5
+    },
     "fields": [
         {
+            "key": "topText",
+            "type": "textarea",
             "required": true,
-            "key": "gender",
-            "defaultValue": "boy",
-            "label": "نوع التصميم",
-            "type": "select",
-            "options": [
-                {
-                    "value": "boy",
-                    "label": "خريج"
-                },
-                {
-                    "value": "girl",
-                    "label": "خريجة"
-                }
-            ]
+            "defaultValue": "في العصر أيام يزينها السرور\nوسرور هذا اليوم جدا مختلف",
+            "label": "النص العلوي",
+            "minLength": 5,
+            "maxLength": 140
         },
         {
-            "key": "badgeText",
+            "key": "middleText",
+            "type": "textarea",
+            "required": true,
+            "defaultValue": "يسعدنا أن تشاركونا فرحتنا بتخرج",
+            "label": "نص قبل الاسم",
+            "minLength": 3,
+            "maxLength": 120
+        },
+        {
+            "key": "name",
             "type": "text",
             "required": true,
-            "defaultValue": "بطاقة تهنئة تخرج",
-            "label": "النص العلوي",
+            "label": "اسم الخريج / الخريجة",
+            "placeholder": "مثال: سارة",
+            "minLength": 2,
             "maxLength": 50
         },
         {
-            "key": "batchText",
-            "type": "text",
-            "required": true,
-            "defaultValue": "دفعة 2026",
-            "label": "نص الدفعة",
-            "maxLength": 40
-        },
-        {
-            "key": "icon",
-            "type": "icon",
-            "required": true,
-            "options": [
-                {
-                    "label": "🎓",
-                    "value": "🎓"
-                },
-                {
-                    "label": "🏆",
-                    "value": "🏆"
-                },
-                {
-                    "label": "📜",
-                    "value": "📜"
-                },
-                {
-                    "label": "✨",
-                    "value": "✨"
-                },
-                {
-                    "label": "🌟",
-                    "value": "🌟"
-                },
-                {
-                    "label": "🎉",
-                    "value": "🎉"
-                }
-            ],
-            "defaultValue": "🎓",
-            "label": "الأيقونة"
-        },
-        {
-            "key": "preTitle",
-            "type": "text",
-            "required": true,
-            "defaultValue": "بكل فخر واعتزاز",
-            "label": "النص قبل العنوان",
-            "maxLength": 60
-        },
-        {
-            "key": "mainTitle",
-            "type": "text",
-            "required": true,
-            "defaultValue": "نبارك التخرج",
-            "label": "العنوان الرئيسي",
-            "maxLength": 60
-        },
-        {
-            "key": "message",
+            "key": "bottomText",
             "type": "textarea",
             "required": true,
-            "defaultValue": "نبارك لكم هذا الإنجاز الجميل، ونسأل الله أن يكون تخرجكم بداية لمستقبل مشرق مليء بالنجاح والتميّز.",
-            "label": "نص التهنئة",
+            "defaultValue": "لقاؤكم المحب يزيد أنساً\nفتقربكم المسرة والسعادة",
+            "label": "النص السفلي",
             "minLength": 5,
-            "maxLength": 260
-        },
-        {
-            "key": "nameLabel",
-            "type": "text",
-            "required": true,
-            "defaultValue": "الخريج / الخريجة",
-            "label": "عنوان الاسم",
-            "maxLength": 40
-        },
-        {
-            "key": "names",
-            "type": "names",
-            "required": true,
-            "label": "اسم الخريج / الخريجة",
-            "placeholder": "مثال: محمد",
-            "separator": " و ",
-            "minItems": 1,
-            "maxItems": 10
-        },
-        {
-            "key": "degree",
-            "type": "text",
-            "required": true,
-            "defaultValue": "تخرجكم فخرٌ لنا وفرحةٌ لا تُنسى",
-            "label": "عبارة الإنجاز",
-            "maxLength": 90
-        },
-        {
-            "key": "closing",
-            "type": "text",
-            "required": true,
-            "defaultValue": "ألف مبروك التخرج",
-            "label": "العبارة الختامية",
-            "maxLength": 70
+            "maxLength": 140
         }
     ]
 }

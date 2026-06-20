@@ -9,64 +9,23 @@
 </head>
 
 <body>
-    <main class="graduation-site gender-{{gender}}">
-        <section class="graduation-card">
+    <main class="graduation-story">
+        <section class="text-area">
+            <p class="top-text">
+                {{topText}}
+            </p>
 
-            <div class="luxury-bg"></div>
-            <div class="grid-pattern"></div>
-            <div class="main-glow glow-top"></div>
-            <div class="main-glow glow-bottom"></div>
+            <p class="middle-text">
+                {{middleText}}
+            </p>
 
-            <span class="star star-1" aria-hidden="true">✦</span>
-            <span class="star star-2" aria-hidden="true">✧</span>
-            <span class="star star-3" aria-hidden="true">★</span>
-            <span class="star star-4" aria-hidden="true">✦</span>
-            <span class="star star-5" aria-hidden="true">✧</span>
+            <h1 class="graduate-name">
+                {{name}}
+            </h1>
 
-            <div class="corner corner-top-right"></div>
-            <div class="corner corner-bottom-left"></div>
-
-            <div class="top-ribbon">
-                <span>{{badgeText}}</span>
-            </div>
-
-            <header class="card-header">
-                <div class="batch-pill">
-                    {{batchText}}
-                </div>
-
-                <div class="icon-medal">
-                    <div class="icon-shine"></div>
-                    <div class="icon">{{icon}}</div>
-                </div>
-
-                <p class="pre-title">{{preTitle}}</p>
-                <h2 class="main-title">{{mainTitle}}</h2>
-            </header>
-
-            <section class="card-content">
-                <p class="message">
-                    {{message}}
-                </p>
-
-                <div class="name-box">
-                    <span class="name-label">{{nameLabel}}</span>
-                    <h1 class="names">{{names}}</h1>
-                </div>
-
-                <div class="degree-box">
-                    <span aria-hidden="true">✦</span>
-                    <strong>{{degree}}</strong>
-                    <span aria-hidden="true">✦</span>
-                </div>
-            </section>
-
-            <footer class="card-footer">
-                <div class="footer-line"></div>
-                <p>{{closing}}</p>
-                <div class="footer-line"></div>
-            </footer>
-
+            <p class="bottom-text">
+                {{bottomText}}
+            </p>
         </section>
     </main>
 </body>
