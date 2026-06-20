@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap');
 
 :root {
+    --bg-image: url("assets/images/bg.png");
     --text-color: #3f5f58;
     --name-color: #72a99b;
 }
@@ -31,6 +32,8 @@ body {
 
     overflow: hidden;
     container-type: size;
+
+    background-image: var(--bg-image);
     background-size: 100% 100%;
     background-position: center;
     background-repeat: no-repeat;
